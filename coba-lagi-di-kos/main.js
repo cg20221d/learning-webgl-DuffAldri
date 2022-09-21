@@ -37,7 +37,11 @@ function main() {
     var vertices = new Float32Array([
         -0.5, -0.5, 
         0.5, -0.5,
-        0.0, 0.5
+        0.0, 0.5,
+        0.2, 0.3,
+        0.2, -0.2,
+        -0.3, -0.2,
+        -0.3, 0.3
     ])
 
     var buffer = gl.createBuffer();
@@ -52,7 +56,8 @@ function main() {
     gl.enableVertexAttribArray(program.position);
     gl.vertexAttribPointer(program.position, 2, gl.FLOAT, false, 0, 0);
 
-    gl.drawArrays(gl.TRIANGLES, 0, vertices.length/2);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    // gl.drawArrays(gl.TRIANGLES, 0, 4);
 }
 
 window.onload = main;
